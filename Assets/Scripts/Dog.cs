@@ -7,7 +7,7 @@ public class Dog : MonoBehaviour
     public GameObject Food;
     void Start()
     {
-        InvokeRepeating("MakeFood", 0f, 0.5f);
+        InvokeRepeating("MakeFood", 0f, 0.2f);
     }
 
     void Update()

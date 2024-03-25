@@ -231,6 +231,7 @@ MonoBehaviour:
   RetryButton: {fileID: 560310184}
   LevelText: {fileID: 953780576}
   LevelFront: {fileID: 844580260}
+  FatCat: {fileID: 1567045519307079390, guid: 0a9f390c9cc41ff49a35f02c675a31e1, type: 3}
 --- !u!4 &96690157
 Transform:
   m_ObjectHideFlags: 0

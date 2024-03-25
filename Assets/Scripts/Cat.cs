@@ -8,22 +8,35 @@ public class Cat : MonoBehaviour
     public RectTransform Front;
     public GameObject HungryCat;
     public GameObject FullCat;
+    public int Type;
 
     float _full = 5.0f;
     float _energe = 0.0f;
+    float _speed = 0.05f;
     bool _isFull = false;
 
     void Start()
     {
         float x = Random.Range(-12.0f, 12.0f);
         transform.position = new Vector3(x, 30f, 1f);
+
+        if (Type == 1)
+        {
+            _speed = 0.05f;
+            _full = 5f;
+        }
+        else if (Type == 2)
+        {
+            _speed = 0.02f;
+            _full = 10f;
+        }
     }
 
     void Update()
     {
         if (_energe < _full)
         {
-            transform.position += Vector3.down * 0.05f;
+            transform.position += Vector3.down * _speed;
             if (transform.position.y < -16.0f)
             {
                 GameManager.Instance.GameOver();
@@ -33,11 +46,11 @@ public class Cat : MonoBehaviour
         {
             if (transform.position.x < 0)
             {
-                transform.position += Vector3.left * 0.05f;
+                transform.position += Vector3.left * _speed;
             }
             else
             {
-                transform.position += Vector3.right * 0.05f;
+                transform.position += Vector3.right * _speed;
             }
         }
     }
