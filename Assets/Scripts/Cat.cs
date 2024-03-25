@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class Cat : MonoBehaviour
 {
@@ -10,6 +11,7 @@ public class Cat : MonoBehaviour
 
     float _full = 5.0f;
     float _energe = 0.0f;
+    bool _isFull = false;
 
     void Start()
     {
@@ -52,9 +54,14 @@ public class Cat : MonoBehaviour
             }
             if (_energe == _full)
             {
-                HungryCat.SetActive(false);
-                FullCat.SetActive(true);
-                Destroy(gameObject, 5.0f);
+                if (!_isFull)
+                {
+                    _isFull = true;
+                    HungryCat.SetActive(false);
+                    FullCat.SetActive(true);
+                    Destroy(gameObject, 5.0f);
+                    GameManager.Instance.AddScore();
+                }
             }
         }
     }
