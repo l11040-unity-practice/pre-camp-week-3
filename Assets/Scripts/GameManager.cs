@@ -16,11 +16,12 @@ public class GameManager : MonoBehaviour
         Application.targetFrameRate = 60;
         Time.timeScale = 1.0f;
     }
-    public GameObject NormalCat;
     public GameObject RetryButton;
     public Text LevelText;
     public RectTransform LevelFront;
+    public GameObject NormalCat;
     public GameObject FatCat;
+    public GameObject PirateCat;
 
     int _level = 0;
     int _score = 0;
@@ -46,6 +47,9 @@ public class GameManager : MonoBehaviour
                 break;
             case 3:
                 Instantiate(FatCat);
+                break;
+            case 4:
+                Instantiate(PirateCat);
                 break;
         }
     }

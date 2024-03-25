@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Diagnostics;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -20,15 +21,20 @@ public class Cat : MonoBehaviour
         float x = Random.Range(-12.0f, 12.0f);
         transform.position = new Vector3(x, 30f, 1f);
 
-        if (Type == 1)
+        switch (Type)
         {
-            _speed = 0.05f;
-            _full = 5f;
-        }
-        else if (Type == 2)
-        {
-            _speed = 0.02f;
-            _full = 10f;
+            case 1:
+                _speed = 0.05f;
+                _full = 5f;
+                break;
+            case 2:
+                _speed = 0.02f;
+                _full = 10f;
+                break;
+            case 3:
+                _speed = 0.1f;
+                _full = 5f;
+                break;
         }
     }
 

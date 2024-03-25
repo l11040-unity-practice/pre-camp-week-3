@@ -227,11 +227,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6394e80fb3e634442950a525e048fd2b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  NormalCat: {fileID: 246230520327689006, guid: df95112c8cd641f47b66ace894162468, type: 3}
   RetryButton: {fileID: 560310184}
   LevelText: {fileID: 953780576}
   LevelFront: {fileID: 844580260}
+  NormalCat: {fileID: 246230520327689006, guid: df95112c8cd641f47b66ace894162468, type: 3}
   FatCat: {fileID: 1567045519307079390, guid: 0a9f390c9cc41ff49a35f02c675a31e1, type: 3}
+  PirateCat: {fileID: 9148366441797448460, guid: 1e57278be511f964ea2e9f7f64fc7cae, type: 3}
 --- !u!4 &96690157
 Transform:
   m_ObjectHideFlags: 0
