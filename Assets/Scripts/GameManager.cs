@@ -37,20 +37,22 @@ public class GameManager : MonoBehaviour
         // Level 2 50프로 확률로 고양이 더 생성
         // Level 3 Fat Cat 생성
         int p = Random.Range(0, 10);
-        switch (_level)
+
+        if (_level == 1)
         {
-            case 1:
-                if (p < 2) Instantiate(NormalCat);
-                break;
-            case 2:
-                if (p < 5) Instantiate(NormalCat);
-                break;
-            case 3:
-                Instantiate(FatCat);
-                break;
-            case 4:
-                Instantiate(PirateCat);
-                break;
+            if (p < 2) Instantiate(NormalCat);
+        }
+        else if (_level == 2)
+        {
+            if (p < 5) Instantiate(NormalCat);
+        }
+        else if (_level == 3)
+        {
+            Instantiate(FatCat);
+        }
+        else if (_level >= 4)
+        {
+            Instantiate(PirateCat);
         }
     }
 
