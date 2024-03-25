@@ -13,8 +13,7 @@ public class Cat : MonoBehaviour
 
     void Start()
     {
-        Application.targetFrameRate = 60;
-        float x = Random.Range(-13.0f, 13.0f);
+        float x = Random.Range(-12.0f, 12.0f);
         transform.position = new Vector3(x, 30f, 1f);
     }
 
@@ -23,6 +22,10 @@ public class Cat : MonoBehaviour
         if (_energe < _full)
         {
             transform.position += Vector3.down * 0.05f;
+            if (transform.position.y < -16.0f)
+            {
+                GameManager.Instance.GameOver();
+            }
         }
         else
         {
@@ -51,6 +54,7 @@ public class Cat : MonoBehaviour
             {
                 HungryCat.SetActive(false);
                 FullCat.SetActive(true);
+                Destroy(gameObject, 5.0f);
             }
         }
     }
